@@ -6,15 +6,15 @@ pipeline {
 
   }
   stages {
-    stage('step1') {
+    stage('Source') {
       steps {
-        sh 'echo \'step 1\''
+        git(branch: 'master', url: 'https://github.com/nina514/laravel-example.git')
       }
     }
 
-    stage('step2') {
+    stage('deploy') {
       steps {
-        sh 'echo \'step 2\''
+        echo 'deploy'
       }
     }
 
